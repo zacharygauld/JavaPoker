@@ -14,16 +14,18 @@ public class Main {
         ArrayList<Player> listOfPlayers = new ArrayList<Player>();
         System.out.print("How many players will be playing? ");
         int numOfPlayers = input.nextInt();
+        input.nextLine();
         int playerNumber = 1;
         String name;
         for (int i = 0; i < numOfPlayers; i++)
         {
             System.out.format("Enter player %d's name: ", playerNumber);
-            name = input.next();
+            name = input.nextLine();
             listOfPlayers.add(new Player(name));
             playerNumber++;
         }
         dealCards(listOfPlayers, shuffledDeck);
+        System.out.println();
         displayPlayerHands(listOfPlayers);
         displayCardsRemainingInDeck(shuffledDeck);
     }
